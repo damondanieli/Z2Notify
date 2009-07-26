@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Z2Notify' target in the 'Z2Notify' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
