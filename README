@@ -1,0 +1,44 @@
+Z2Notify: Z2Live Service Notification Tester
+MIT License (Copyright 2009 Zero260, Inc)
+www.Z2Live.com
+
+Z2Notify is a native Mac application that sends notifications to the iPhone 
+and iPod touch (OS 3.0) via the Apple Push Notification service (APNs).
+
+*** Push Notification Certificate Setup on the Mac ***
+
+You need an application-specific push notification certificate from Apple.
+
+See instructions on Z2Live.com about creating the AppID and certificate  
+via Apple's developer portal.
+
+Download the .cer file and double-click it to enter it into your keychain.  
+It must have the private key associated with it.  
+
+If you've installed the certificate and it doesn't have the private key, 
+then have the owner export the private key into a .p12 file and send that 
+to you.  Double-click that to install it.
+
+Enter the name of the certificate into the Certificate text field.  It will
+be something like this:
+
+  "Apple Developer Push Services: XXXXXXXXX:YYYYYYYYY"
+
+
+*** iPhone Application Setup *** 
+
+You will need an iPhone app built with an AppID that has push notifications 
+enabled.  
+
+Download the provision profile associated with the AppID used to create the 
+certificate (above).
+
+Build the iPhone app with that bundle identifier (note: it has to have the 
+full name com.your-company.app-name.  You cannot use wildcards for push
+notification as they are application specific.
+
+You will need to run the application and get the device token via the 
+UIApplication didRegisterForRemoteNotificationsWithDeviceToken method.
+
+Enter that device token into the Device Token text field.
+
