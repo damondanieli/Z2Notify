@@ -247,7 +247,10 @@
 		} while(result == errSSLWouldBlock);
 	}
 	
-	if (result != noErr) {
+	if (result == noErr) {
+		// Disable text field after successful connect
+		[certificateNameField setEnabled:NO];
+	} else {
 		[self disconnect];
 	}
 
